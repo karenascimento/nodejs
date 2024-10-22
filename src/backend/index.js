@@ -19,7 +19,7 @@ app.get('/api/colaborador', async (req, res) => {
     console.log('Conexão ao banco de dados bem-sucedida!');
 
     const result = await connection.execute(
-      `SELECT ID, NOME, FUNCIONAL, EMAIL, CARGO FROM COLABORADOR`
+      `SELECT ID_COLABORADOR, NOME_COLABORADOR, FUNCIONAL_COLABORADOR, EMAIL_COLABORADOR, CARGO_COLABORADOR FROM COLABORADOR`
     );
 
     if (result.rows.length === 0) {

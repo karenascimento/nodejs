@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios'; // Certifique-se de importar axios
+import axios from 'axios';
 import './style.css';
 
 function Home() {
-  const [colaboradores, setColaboradores] = useState([]); // Estado inicial como array
+  const [colaboradores, setColaboradores] = useState([]); 
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({ name: '', funcional: '' });
   const [colaboradorEncontrado, setColaboradorEncontrado] = useState(null);
@@ -13,7 +13,6 @@ function Home() {
       const response = await axios.get('/api/colaborador');
       console.log('Dados recebidos:', response);
 
-      // Verificar se a resposta é um array antes de atualizar o estado
       if (Array.isArray(response.data)) {
         setColaboradores(response.data);
       } else {
